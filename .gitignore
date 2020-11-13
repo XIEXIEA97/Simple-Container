@@ -1,3 +1,4 @@
 echo
 sc
 test
+test_keyctl

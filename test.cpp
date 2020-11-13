@@ -1,5 +1,18 @@
 #include "sc.hpp"
 #include <sys/mman.h>
+#include <asm/unistd.h>
+#include <unistd.h>
+#include <keyutils.h>
+#include <sys/types.h>
+#include <keyutils.h>
+#include <time.h>
+#include <fcntl.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <errno.h>
 
 using namespace std;
 
@@ -22,13 +35,11 @@ bool can_do_mlock(void){
 }
 
 int main(){
-	cout << can_do_mlock() << endl;
-	// mknod /dev/fd2 b 1 2
 	system("mknod /dev/fd2 b 1 2");
 
 	cap_t caps = cap_get_proc();
 	char *caps_names = cap_to_text(caps, NULL);
-	printf("caps: %s", caps_names);
-
+	printf("caps: %s\n", caps_names);
+	
 	return 0;
 }

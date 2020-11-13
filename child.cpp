@@ -11,6 +11,11 @@ int child(void *arg){
 		return 1;
 	}
 
+	if(syscalls()){
+		fprintf(stderr, "syscalls block failed: %s\n", strerror(errno));
+		return 1;
+	}
+
 	if(execve(config->argv[0], config->argv, NULL)){
 		fprintf(stderr, "contained process execve failed: %s\n", strerror(errno));
 		return 1;

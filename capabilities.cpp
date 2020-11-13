@@ -1,6 +1,6 @@
 #include "sc.hpp"
 
-static int drop[] = {
+static int drop_list[] = {
 	CAP_AUDIT_CONTROL,
 	CAP_AUDIT_READ,
 	CAP_AUDIT_WRITE,
@@ -21,21 +21,22 @@ static int drop[] = {
 	CAP_SYS_RAWIO,
 	CAP_SYS_RESOURCE,
 	CAP_SYS_TIME,
-	CAP_WAKE_ALARM
+	CAP_WAKE_ALARM,
 };
 
 int capabilities(){
 	fprintf(stdout, "drop capabilities from bounding set\n");
 
-	int ncap = sizeof(drop) / sizeof(int);
+	int ncap = sizeof(drop_list) / sizeof(*drop_list);
 	for(int i=0; i<ncap; i++){
-		if(prctl(PR_CAPBSET_DROP, drop[i], 0, 0, 0)){ // drop capabilities from bounding set
+		if(prctl(PR_CAPBSET_DROP, drop_list[i], 0, 0, 0)){ // drop capabilities from bounding set
 			fprintf(stderr, "prctl failed: %s\n", strerror(errno));
 			return 1;
 		}
 	}
 
 	fprintf(stdout, "drop capabilities from inheritable set\n");
+	int rc = -1;
 
 	cap_t caps = cap_get_proc(); // get current process's capability
 	if(!caps){
@@ -43,13 +44,15 @@ int capabilities(){
 		goto out;
 	}
 
-	if(cap_set_flag(caps, CAP_INHERITABLE, ncap, drop, CAP_CLEAR)){
+	rc = cap_set_flag(caps, CAP_INHERITABLE, ncap, drop_list, CAP_CLEAR);
+	if(rc < 0){
 		// drop the capabilities from the caps state
 		fprintf(stderr, "cap_set_flag failed: %s\n", strerror(errno));
 		goto out;
 	}
 
-	if(cap_set_proc(caps)){ // apply caps to set the process's state(inheritable set)
+	rc = cap_set_proc(caps);
+	if(rc < 0){ // apply caps to set the process's state(inheritable set)
 		fprintf(stderr, "cap_set_flag failed: %s\n", strerror(errno));
 		goto out;
 	}
@@ -59,5 +62,5 @@ int capabilities(){
 out:
 	if(caps)
 		cap_free(caps);
-	return 0;
+	return -rc;
 }

@@ -10,6 +10,10 @@
 #include <sys/capability.h>
 #include <iostream>
 #include <sys/wait.h>
+#include <seccomp.h>
+#include <sys/stat.h>
+#include <sys/ioctl.h>
+#include <assert.h>
 
 using namespace std;
 
@@ -28,3 +32,4 @@ typedef struct _Config *Config;
 
 int child(void *arg);
 int capabilities();
+int syscalls();
