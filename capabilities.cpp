@@ -31,7 +31,7 @@ int capabilities(){
 	for(int i=0; i<ncap; i++){
 		if(prctl(PR_CAPBSET_DROP, drop_list[i], 0, 0, 0)){ // drop capabilities from bounding set
 			fprintf(stderr, "prctl failed: %s\n", strerror(errno));
-			return 1;
+			return -1;
 		}
 	}
 

@@ -139,5 +139,5 @@ int syscalls(){
 out:
 	if(ctx)
 		seccomp_release(ctx);
-	return -rc;
+	return rc;
 }

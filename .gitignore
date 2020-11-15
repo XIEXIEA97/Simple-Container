@@ -2,3 +2,4 @@ echo
 sc
 test
 test_keyctl
+test_cap
