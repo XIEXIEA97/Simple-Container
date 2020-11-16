@@ -1,4 +1,5 @@
 #include "sc.hpp"
+#include <dirent.h>
 
 int mounts(){
   // mount root fs
@@ -10,5 +11,18 @@ int mounts(){
   if (mount_rc = chdir("/")) {
 		return mount_rc;
 	}
+
+  DIR *d;
+  struct dirent *dir;
+  d = opendir(".");
+  if (d)
+  {
+      while ((dir = readdir(d)) != NULL)
+      {
+          fprintf("%s\n", dir->d_name);
+      }
+      closedir(d);
+  }
+
   return 0;
 }
