@@ -31,6 +31,11 @@ int child(void *arg){
 		goto out;
 	}
 
+	if(rc = mounts()){
+		fprintf(stderr, "mount change failed: %s\n", strerror(errno));
+		goto out;
+	}
+
 	if(rc = capabilities()){
 		fprintf(stderr, "capabilities drop failed: %s\n", strerror(errno));
 		goto out;

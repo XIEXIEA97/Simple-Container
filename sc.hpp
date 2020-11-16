@@ -41,6 +41,7 @@ typedef struct _Config *Config;
 int child(void *arg);
 int capabilities();
 int syscalls();
+int mounts();
 int parentSetUidGidMap(pid_t cpid, int rfd, int wfd);
 int childWaitForMap(int rfd, int wfd);
 int setUidGid(uid_t uid, gid_t gid);
