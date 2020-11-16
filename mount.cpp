@@ -19,7 +19,7 @@ int mounts(){
   {
       while ((dir = readdir(d)) != NULL)
       {
-          fprintf("%s\n", dir->d_name);
+          fprintf(stdout, "%s\n", dir->d_name);
       }
       closedir(d);
   }
