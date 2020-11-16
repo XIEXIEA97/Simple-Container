@@ -18,6 +18,10 @@ int child(void *arg){
 	}
 
 	// // mount
+	if(rc = mounts()){
+		fprintf(stderr, "mount change failed: %s\n", strerror(errno));
+		goto out;
+	}
 
 	if(childWaitForMap(config->rfd, config->wfd)){
 		fprintf(stderr, "child wait failed: %s\n", strerror(errno));
@@ -28,11 +32,6 @@ int child(void *arg){
 	if(setUidGid(config->uid, config->gid)){
 		fprintf(stderr, "uid/gid set failed: %s\n", strerror(errno));
 		rc = -1;
-		goto out;
-	}
-
-	if(rc = mounts()){
-		fprintf(stderr, "mount change failed: %s\n", strerror(errno));
 		goto out;
 	}
 
