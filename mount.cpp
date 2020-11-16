@@ -4,7 +4,7 @@ int mounts(){
   // mount root fs
   fprintf(stdout, "Mounting new root fs\n");
   int mount_rc;
-  if (mount_rc = syscall(SYS_pivot_root, ("/contained", "/tmp/old_root"))) {
+  if (mount_rc = chroot("/contained")) {
 		return mount_rc;
 	}
   // if (mount_rc = chdir("/")) {
