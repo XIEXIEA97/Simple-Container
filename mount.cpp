@@ -14,7 +14,7 @@ int mounts(){
 
   DIR *d;
   struct dirent *dir;
-  d = opendir(".");
+  d = opendir("/bin");
   if (d)
   {
       while ((dir = readdir(d)) != NULL)
