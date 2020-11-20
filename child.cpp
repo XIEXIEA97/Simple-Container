@@ -4,7 +4,7 @@
 int child(void *arg){
 	int rc = -1;
 	Config config = (Config)arg;
-	string hostname = "simple_container";
+	string hostname = config->hostname;
 	// for(int i=0; i<config->argc; i++){
 	// 	cout << config->argv[i] << endl;
 	// }
@@ -18,6 +18,10 @@ int child(void *arg){
 	}
 
 	// // mount
+	// if(rc = mounts()){
+	// 	fprintf(stderr, "mount change failed: %s\n", strerror(errno));
+	// 	goto out;
+	// }
 
 	if(childWaitForMap(config->rfd, config->wfd)){
 		fprintf(stderr, "child wait failed: %s\n", strerror(errno));
@@ -31,6 +35,11 @@ int child(void *arg){
 		goto out;
 	}
 
+	if(rc = mounts()){
+		fprintf(stderr, "mount change failed: %s\n", strerror(errno));
+		goto out;
+	}
+
 	if(rc = capabilities()){
 		fprintf(stderr, "capabilities drop failed: %s\n", strerror(errno));
 		goto out;
@@ -40,6 +49,11 @@ int child(void *arg){
 		fprintf(stderr, "syscalls block failed: %s\n", strerror(errno));
 		goto out;
 	}
+
+	// if(rc = resources(hostname)){
+	// 	fprintf(stderr, "cgroup settings failed: %s\n", strerror(errno));
+	// 	goto out;
+	// }
 
 	fprintf(stdout, "lauch contained environment...\n");
 	if(rc = execve(config->argv[0], config->argv, NULL)){

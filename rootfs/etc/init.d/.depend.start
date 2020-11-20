@@ -1,0 +1,6 @@
+TARGETS = killprocs dbus cgroupfs-mount plymouth single rc.local ondemand
+INTERACTIVE =
+plymouth: dbus cgroupfs-mount
+single: killprocs
+rc.local: dbus cgroupfs-mount
+ondemand: dbus cgroupfs-mount

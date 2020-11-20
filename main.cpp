@@ -16,6 +16,7 @@ int main(int argc, char *argv[]){
 	pid_t cpid;
 
 	config->argc = argc - 1;
+	config->hostname = "simple_container_" + random_string(6);
 	config->argv = &argv[argc - config->argc];
 	config->uid = config->gid = 0;
 	// fprintf(stdout, "\n");
@@ -35,6 +36,12 @@ int main(int argc, char *argv[]){
 
 	if(!stack){
 		fprintf(stderr, "stack allocation failed: %s\n", strerror(errno));
+		rc = -1;
+		goto out;
+	}
+
+	if (resources(config->hostname)) {
+		fprintf(stderr, "cgroups setting failed: %s\n", strerror(errno));
 		rc = -1;
 		goto out;
 	}
