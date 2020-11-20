@@ -1,6 +1,7 @@
-TARGETS = sendsigs urandom hwclock.sh umountnfs.sh umountfs umountroot halt reboot
-umountnfs.sh: sendsigs
-umountfs: urandom umountnfs.sh hwclock.sh
+TARGETS = cgroupfs-mount plymouth urandom hwclock.sh sendsigs umountnfs.sh umountfs umountroot halt reboot
+sendsigs: plymouth cgroupfs-mount
+umountnfs.sh: sendsigs plymouth cgroupfs-mount
+umountfs: urandom hwclock.sh umountnfs.sh plymouth cgroupfs-mount
 umountroot: umountfs
 halt: umountroot
 reboot: umountroot

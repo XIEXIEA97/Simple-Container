@@ -1,0 +1,5 @@
+1f7abb7d2c3b1218aaf3d2747b2fd507  usr/bin/cgroupfs-mount
+87207c892f0e028d416c13f2b9d860ba  usr/bin/cgroupfs-umount
+34296589ad9167cd52ef440b3802ef34  usr/share/doc/cgroupfs-mount/README.md
+c54c520bed98337cae73ef612f3f002e  usr/share/doc/cgroupfs-mount/changelog.gz
+748441b371c032eda4cfc3e5b703997a  usr/share/doc/cgroupfs-mount/copyright

@@ -1,6 +1,7 @@
 #ifndef sc_hpp
 #define sc_hpp
 
+#include <sys/types.h>
 #include <errno.h>
 #include <string.h>
 #include <sys/prctl.h>
@@ -19,12 +20,14 @@
 #include <assert.h>
 #include <fstream>
 #include <grp.h>
+#include <algorithm>
 
 using namespace std;
 
 struct _Config{
 	int argc;
 	char **argv;
+	string hostname;
 	uid_t uid;
 	gid_t gid;
 	int rfd, wfd;
@@ -42,8 +45,10 @@ int child(void *arg);
 int capabilities();
 int syscalls();
 int mounts();
+int resources(string hostname);
 int parentSetUidGidMap(pid_t cpid, int rfd, int wfd);
 int childWaitForMap(int rfd, int wfd);
 int setUidGid(uid_t uid, gid_t gid);
+string random_string(size_t length);
 
 #endif

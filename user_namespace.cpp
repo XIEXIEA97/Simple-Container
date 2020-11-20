@@ -42,7 +42,7 @@ int parentSetUidGidMap(pid_t cpid, int rfd, int wfd){
 
 int childWaitForMap(int rfd, int wfd){
 	// set new namespace for the process
-	bool child_ready = !(bool)unshare(CLONE_NEWUSER), parent_ready;
+	bool child_ready = !(bool)unshare(CLONE_NEWUSER | CLONE_NEWNS | CLONE_FS | CLONE_THREAD | CLONE_NEWUTS), parent_ready;
 	if(!child_ready){
 		fprintf(stderr, "unshare failed: %s\n", strerror(errno));
 		return -1;

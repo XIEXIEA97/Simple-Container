@@ -135,8 +135,8 @@ Description-en: Transitional package for nvidia-340
  safely removed after the installation is complete.
 
 Package: nvidia-340
-Description-md5: 8012b4c71eb1b0c6115ae1c19b2406ca
-Description-en: NVIDIA binary driver - version 340.104
+Description-md5: 13c4c18c98fc7882b256b3eef46e18e4
+Description-en: NVIDIA binary driver - version 340.107
  The binary driver provide optimized hardware acceleration of OpenGL
  applications via a direct-rendering X Server. AGP, PCIe, SLI, TV-out
  and flat panel displays are also supported.
@@ -147,7 +147,7 @@ Description-en: NVIDIA binary driver - version 340.104
  for GeForce 8 and later series cards for h264 video.
  .
  Release Notes and supported GPUs:
- http://www.nvidia.com/object/linux-display-amd64-340.104-driver.html
+ http://www.nvidia.com/object/linux-display-amd64-340.107-driver.html
 
 Package: nvidia-340-dev
 Description-md5: ef3b76d980ecacaf3116114549ba70ca
@@ -302,8 +302,8 @@ Description-en: NVIDIA OpenCL ICD
  which supports NVIDIA GPUs.
 
 Package: nvidia-340
-Description-md5: ba98499c6febc28515a3c34b78f95c98
-Description-en: NVIDIA binary driver - version 340.104
+Description-md5: 8b95df1a2fe8bbf56b6a34a8909b09ca
+Description-en: NVIDIA binary driver - version 340.107
  The binary driver provide optimized hardware acceleration of OpenGL
  applications via a direct-rendering X Server. AGP, PCIe, SLI, TV-out
  and flat panel displays are also supported.
@@ -314,7 +314,7 @@ Description-en: NVIDIA binary driver - version 340.104
  for GeForce 8 and later series cards for h264 video.
  .
  Release Notes and supported GPUs:
- http://www.nvidia.com/object/linux-display-32bit-arm-340.104-driver.html
+ http://www.nvidia.com/object/linux-display-32bit-arm-340.107-driver.html
 
 Package: nvidia-384
 Description-md5: e45360b21384c78fb2cc20e9f41119c3
@@ -349,8 +349,8 @@ Description-en: NVIDIA legacy binary driver - version 304.135
  http://www.nvidia.com/object/linux-display-ia32-304.135-driver.html
 
 Package: nvidia-340
-Description-md5: 0a70a09fc8abb782bdb827eab0be69ef
-Description-en: NVIDIA binary driver - version 340.104
+Description-md5: 7ca60e120a3473a41f5a094ebb9a9a64
+Description-en: NVIDIA binary driver - version 340.107
  The binary driver provide optimized hardware acceleration of OpenGL
  applications via a direct-rendering X Server. AGP, PCIe, SLI, TV-out
  and flat panel displays are also supported.
@@ -361,7 +361,7 @@ Description-en: NVIDIA binary driver - version 340.104
  for GeForce 8 and later series cards for h264 video.
  .
  Release Notes and supported GPUs:
- http://www.nvidia.com/object/linux-display-ia32-340.104-driver.html
+ http://www.nvidia.com/object/linux-display-ia32-340.107-driver.html
 
 Package: nvidia-384
 Description-md5: 1a50a24145b3fe182b29e774bdbfd6e4

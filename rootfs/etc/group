@@ -43,3 +43,5 @@ systemd-network:x:103:
 systemd-resolve:x:104:
 systemd-bus-proxy:x:105:
 ubuntu:x:1000:
+input:x:106:
+messagebus:x:107:

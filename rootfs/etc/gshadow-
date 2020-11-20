@@ -42,3 +42,5 @@ systemd-timesync:!::
 systemd-network:!::
 systemd-resolve:!::
 systemd-bus-proxy:!::
+ubuntu:!::
+input:!::
