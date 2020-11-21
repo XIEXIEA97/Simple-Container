@@ -1112,6 +1112,26 @@ Description: systemd utility library
 Homepage: http://www.freedesktop.org/wiki/Software/systemd
 Original-Maintainer: Debian systemd Maintainers <pkg-systemd-maintainers@lists.alioth.debian.org>
 
+Package: keyutils
+Status: install ok installed
+Priority: optional
+Section: admin
+Installed-Size: 126
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: foreign
+Version: 1.5.9-8ubuntu1
+Depends: libc6 (>= 2.15), libkeyutils1 (>= 1.5.9)
+Conffiles:
+ /etc/request-key.conf bf33ebef2dd99b739d06c67976d549fd
+Description: Linux Key Management Utilities
+ Keyutils is a set of utilities for managing the key retention facility in the
+ kernel, which can be used by filesystems, block devices and more to gain and
+ retain the authorization and encryption keys required to perform secure
+ operations.
+Homepage: http://people.redhat.com/~dhowells/keyutils/
+Original-Maintainer: Christian Kastner <ckk@debian.org>
+
 Package: libc6
 Status: install ok installed
 Priority: required
@@ -2505,6 +2525,28 @@ Depends: libblkid1 (>= 2.17.2), libc6 (>= 2.17), libselinux1 (>= 1.32)
 Description: device mounting library
  This device mounting library is used by mount and umount helpers.
 Original-Maintainer: Debian util-linux Maintainers <ah-util-linux@debian.org>
+
+Package: libkeyutils1
+Status: install ok installed
+Priority: standard
+Section: libs
+Installed-Size: 36
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: amd64
+Multi-Arch: same
+Source: keyutils
+Version: 1.5.9-8ubuntu1
+Depends: libc6 (>= 2.14)
+Description: Linux Key Management Utilities (library)
+ Keyutils is a set of utilities for managing the key retention facility in the
+ kernel, which can be used by filesystems, block devices and more to gain and
+ retain the authorization and encryption keys required to perform secure
+ operations.
+ .
+ This package provides a wrapper library for the key management facility system
+ calls.
+Homepage: http://people.redhat.com/~dhowells/keyutils/
+Original-Maintainer: Christian Kastner <ckk@debian.org>
 
 Package: login
 Essential: yes

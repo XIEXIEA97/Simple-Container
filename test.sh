@@ -2,7 +2,6 @@
 echo "start test script"
 ls .
 ls /
-ps
 id
 hostname
 whoami
