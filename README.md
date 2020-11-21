@@ -1,7 +1,7 @@
 # Simple-Container
 build the container binary use:
 ```sh
-$ make
+$ make all
 ```
 build some test binaries:
 ```sh
@@ -9,11 +9,16 @@ $ make testc & make testk
 ```
 call the container and run the binary echo in the repo which echo the command line arguments, make sure the binary is executable for all users:
 ```sh
-$  ./sc /echo a b c 1 2 3
+$ sudo ./sc /echo a b c 1 2 3
 ```
 run a shell in the container
 ```sh
-$ ./sc /bin/sh
+$ sudo ./sc /bin/sh
+```
+to test the container, First, make sure that you are under the **/code** directory
+to test the resources of the process, run as below. The number is the times that we try to write into a binary string.
+```sh
+$ python3 memtest.py 3
 ```
 run a test shell script to see something different inside the container, make sure the script is executable for all users:
 ```sh
