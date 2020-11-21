@@ -2327,3 +2327,31 @@
 2020-11-19 03:31:11 status half-configured systemd:amd64 229-4ubuntu21.16
 2020-11-19 03:31:11 status installed systemd:amd64 229-4ubuntu21.16
 2020-11-19 03:31:12 startup packages configure
+2020-11-20 23:40:05 startup archives unpack
+2020-11-20 23:40:05 install libkeyutils1:amd64 <none> 1.5.9-8ubuntu1
+2020-11-20 23:40:05 status triggers-pending libc-bin:amd64 2.23-0ubuntu11
+2020-11-20 23:40:05 status half-installed libkeyutils1:amd64 1.5.9-8ubuntu1
+2020-11-20 23:40:05 status unpacked libkeyutils1:amd64 1.5.9-8ubuntu1
+2020-11-20 23:40:05 status unpacked libkeyutils1:amd64 1.5.9-8ubuntu1
+2020-11-20 23:40:05 install keyutils:amd64 <none> 1.5.9-8ubuntu1
+2020-11-20 23:40:05 status half-installed keyutils:amd64 1.5.9-8ubuntu1
+2020-11-20 23:40:05 status unpacked keyutils:amd64 1.5.9-8ubuntu1
+2020-11-20 23:40:05 status unpacked keyutils:amd64 1.5.9-8ubuntu1
+2020-11-20 23:40:05 trigproc libc-bin:amd64 2.23-0ubuntu11 <none>
+2020-11-20 23:40:05 status half-configured libc-bin:amd64 2.23-0ubuntu11
+2020-11-20 23:40:05 status installed libc-bin:amd64 2.23-0ubuntu11
+2020-11-20 23:40:06 startup packages configure
+2020-11-20 23:40:06 configure libkeyutils1:amd64 1.5.9-8ubuntu1 <none>
+2020-11-20 23:40:06 status triggers-pending libc-bin:amd64 2.23-0ubuntu11
+2020-11-20 23:40:06 status unpacked libkeyutils1:amd64 1.5.9-8ubuntu1
+2020-11-20 23:40:06 status half-configured libkeyutils1:amd64 1.5.9-8ubuntu1
+2020-11-20 23:40:06 status installed libkeyutils1:amd64 1.5.9-8ubuntu1
+2020-11-20 23:40:06 configure keyutils:amd64 1.5.9-8ubuntu1 <none>
+2020-11-20 23:40:06 status unpacked keyutils:amd64 1.5.9-8ubuntu1
+2020-11-20 23:40:06 status unpacked keyutils:amd64 1.5.9-8ubuntu1
+2020-11-20 23:40:06 status half-configured keyutils:amd64 1.5.9-8ubuntu1
+2020-11-20 23:40:06 status installed keyutils:amd64 1.5.9-8ubuntu1
+2020-11-20 23:40:06 trigproc libc-bin:amd64 2.23-0ubuntu11 <none>
+2020-11-20 23:40:06 status half-configured libc-bin:amd64 2.23-0ubuntu11
+2020-11-20 23:40:06 status installed libc-bin:amd64 2.23-0ubuntu11
+2020-11-20 23:40:07 startup packages configure

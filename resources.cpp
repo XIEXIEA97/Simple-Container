@@ -28,7 +28,7 @@ int write_setting(string dir, string name, string value) {
         close(fd);
         return -1;
     }
-    fprintf(stderr, "finished setting %s: %s", name.c_str(), value.c_str());
+    fprintf(stderr, "finished setting %s: %s\n", name.c_str(), value.c_str());
     close(fd);
     return 0;
 }
